@@ -17,9 +17,9 @@
     <nav class="level">
         <div class="level-item has-text-centered">
           <div>
-            <p class="title" id="player1">PLAYER 1</p>
+            <p class="title" id="player1">joueur 1</p>
             <br>
-            <p class="heading" id="scoreP1">Score</p>
+            <p class="heading" id="scoreP1">Score Global Joueur 1</p>
           </div>
         </div>
         <div class="level-item has-text-centered" id="dice">
@@ -27,33 +27,44 @@
             <p class="title dice">Dice</p>
             <br>
             <p class="heading" id="dice-score"></p>
-            <h2 id="looser"></h2>
+            <h2 id="message"></h2>
           </div>
         </div>
         <div class="level-item has-text-centered">
           <div>
-            <p class="title" id="player2">PLAYER 2</p>
+            <p class="title" id="player2">joueur 2</p>
             <br>
-            <p class="heading" id="scoreP2">Score</p>
+            <p class="heading" id="scoreP2">Score Global joueur 2</p>
           </div>
         </div>
     </nav>
     <nav class="level">
         <div class="level-item has-text-centered" id="current1">
           <div>
-            <p class="heading" id="currentP1">score courant joueur 1</p>
+            <p class="title">Round Joueur 1</p>
+            <br>
+            <p class="heading" id="currentP1"></p>
           </div>
         </div>
         <div class="level-item has-text-centered" id="rollDice">
           <div>
-            <button class="title rollDice" onclick="rollDice()">Roll-Dice</button>
+            <button class="title rollDice" onclick="rollDice(play)">Roll-Dice</button>
             <br>
-            <button class="title hold" onclick="hold()">Hold</button>
+            <button class="title hold" onclick="hold(play)">Hold</button>
+            <br><br>
+            <h1 id="winner"></h1>
+            <br><br>
+            <div id="confirmation" style="display: none;"><p>Etes vous sur de vouloir redémarrer a zero ?</p>
+            <button onclick="restart()">oui</button>
+            <button onclick ="cancel()">non</button></div>
           </div>
+
         </div>
         <div class="level-item has-text-centered" id="current2">
           <div>
-            <p class="heading" id="currentP2">Current PLAYER 2</p>
+            <p class="title">Round Joueur 2</p>
+            <br>
+            <p class="heading" id="currentP2"></p>
           </div>
         </div>
     </nav>

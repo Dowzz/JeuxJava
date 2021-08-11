@@ -1,56 +1,93 @@
 class Player {
-    constructor(score, current, round){
+    constructor(score, current, affichScore, affichCurrent, name){
         this.score = score;
         this.current = current;
-        this.round = round;
+        this.affichScore = affichScore;
+        this.affichCurrent = affichCurrent;
+        this.name = name;
     }
 }
 newgame = false;
+player1 = new Player(0,0, "scoreP1", "currentP1","joueur 1");
+player2 = new Player(0,0, "scoreP2","currentP2", "joueur 2");
+players = new Array (player1, player2);
+
 
 function newGame(){
-    newgame = true;
-    player1 = new Player(0,0,false);
-    player2 = new Player(0,0,false);
-    players = new Array(player1, player2);
-    document.getElementById('scoreP1').innerHTML = player1.score;
-    document.getElementById('scoreP2').innerHTML = player2.score;
-    document.getElementById('currentP1').innerHTML = player1.current;
-    document.getElementById('currentP2').innerHTML = player2.current;
+    if (newgame === false){
+    play = players[0];
+    document.getElementById(players[0].affichScore).innerHTML = players[0].score = 0;
+    document.getElementById(players[1].affichScore).innerHTML = players[1].score = 0;
+    document.getElementById(players[0].affichCurrent).innerHTML = players[0].current = 0;
+    document.getElementById(players[1].affichCurrent).innerHTML = players[1].current = 0;
     document.getElementById('dice-score').innerHTML = 0;
-    document.getElementById('looser').innerHTML = "Faites rouler le dé !";
+    document.getElementById('message').style.display = "block";
+    document.getElementById('message').innerHTML = "Faites rouler le dé !";
+    newgame = true;
+    document.getElementById('winner').innerHTML = ""
+    
+    }else{
+        document.getElementById("confirmation").style.display = "block";
+    }
 }
+function restart(){
+        newgame = false;
+        newGame();
+        document.getElementById('confirmation').style.display="none";
 
-
-
+}
+function cancel(){
+    document.getElementById('confirmation').style.display="none";
+}
 
 function rollDice(){
     if (newgame === true){
-    number=Math.floor( Math.random() * 6 )+1;
-    document.getElementById('dice-score').innerHTML = number;
-    if(number === 1){
-        document.getElementById('looser').innerHTML = "Perdu !";
-        player1.current=0;
-        player1.round = true;
-        document.getElementById('currentP1').innerHTML = player1.current;
-    }else{
-        player1.current = player1.current+number;
-        player1.round=false
-        document.getElementById('looser').innerHTML = "Faites roulez le dé !";
-        document.getElementById('currentP1').innerHTML = player1.current;
+        number=Math.floor( Math.random() * 100 )+1;
+        document.getElementById('dice-score').innerHTML = number;
+        if(number === 1){
+            play.current=0;
+            document.getElementById(play.affichCurrent).innerHTML = play.current;
+                if (play === players[0]){
+                    play = players[1];
+                }else{
+                    play = players[0];
+                }
+                document.getElementById('message').innerHTML = "Perdu ! tour du " + play.name;
+            }
+            else{
+                play.current = play.current+number;
+                document.getElementById('message').innerHTML = "Tour du " + play.name;
+                document.getElementById(play.affichCurrent).innerHTML = play.current;
+                }
+        }else 
+        document.getElementById('message').innerHTML = "Cliquez d'abord sur new game";
     }
-    }else 
-        document.getElementById('looser').innerHTML = "Cliquez d'abord sur new game";
-}
+
 
 function hold(){
     if (newgame === true){
-    player1.score = player1.score + player1.current; 
-    player1.current = 0;
-    document.getElementById('currentP1').innerHTML = player1.current;
-    document.getElementById('scoreP1').innerHTML = player1.score;
-    player1.round = true;
-    }else 
-        document.getElementById('looser').innerHTML = "Cliquez d'abord sur new game";
+        if (play.current !==0){
+            play.score = play.score + play.current; 
+            if (play.score >100){
+                document.getElementById('message').style.display = "none";
+                document.getElementById('winner').innerHTML = play.name + " a gagné ! félicitations !"
+            }
+            play.current = 0;
+            document.getElementById(play.affichCurrent).innerHTML = play.current;
+            document.getElementById(play.affichScore).innerHTML = play.score;
+            if (play === players[0]){
+                play = players[1];
+            }else{
+                play = players[0];
+            }
+            document.getElementById('message').innerHTML = "le score est sauvegardé, tour du " + play.name;
+
+        }else{
+            document.getElementById('message').innerHTML = "Vous ne pouvez pas sauvegarder sans lancer le dé";
+        }
+       
+        }else 
+            document.getElementById('message').innerHTML = "Cliquez d'abord sur new game";
     }
 
     
