@@ -107,4 +107,10 @@ body {
   margin-right: auto;
   border: 5px inset #292d4f;
 }
+
+#winner {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 /*# sourceMappingURL=Style.css.map */

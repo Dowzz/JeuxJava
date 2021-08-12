@@ -23,12 +23,12 @@ function newGame(){
     players.forEach(player => {
         $(document.getElementsByClassName(player.id)).fadeIn(500);
         $(document.getElementsByClassName('heading')).fadeIn(500);
-        $(document.getElementById('message')).fadeIn(1000);
-        $(document.getElementsByClassName('button')).fadeIn(500);
         document.getElementById('dice').innerHTML = "";
         document.getElementById(player.affichScore).innerHTML = player.globalScore = 0;
         document.getElementById(player.affichCurrent).innerHTML = player.currentScore = 0
     });
+    $(document.getElementById('message')).fadeIn(1000);
+    $(document.getElementsByClassName('button')).fadeIn(500);
     document.getElementById('message').style.display = "block";
     document.getElementById('message').innerHTML = " Faites rouler le dé !";
     newgame = true;
@@ -52,9 +52,10 @@ function cancel(){
 
 function rollDice(){
     if (newgame === true){
+
         document.getElementById('looser').innerHTML = "";
         output = '',
-        number=Math.floor( Math.random() * 6 )+1;
+        number=Math.floor( Math.random() * 100 )+1;
         output += "&#x268" + (number-1) + "; ";
         document.getElementById('dice').innerHTML = output;
         if(number === 1){
