@@ -17,49 +17,49 @@
         <button type="button" class="game-on " onclick="newGame()">New Game</button>
     </div>
     <nav class="level">
-        <div class="level-item has-text-centered is-flex-shrink-5" id="joueur1">
+        <div class="level-item has-text-centered is-flex-shrink-5 joueur1">
           <div>
-            <p class="title" id="player1">joueur 1</p>
-            <p class="heading" id="scoreP1"></p>
+            <p class="title player1" style="display: none;">joueur 1</p>
+            <p class="heading" style="display: none;" id="scoreP1"></p>
           </div>
         </div>
         <div class="level-item has-text-centered is-flex-shrink-5">
           <div>
             <p class="title" id = "dice"></p>
             <span id ="looser"></span>
-            <p id="message"></p>            
+            <p id="message" style="display: none;"></p>            
           </div>
         </div>
-        <div class="level-item has-text-centered is-flex-shrink-5" id ="joueur2">
+        <div class="level-item has-text-centered is-flex-shrink-5 class joueur2">
           <div>
-            <p class="title" id="player2">joueur 2</p>
-            <p class="heading" id="scoreP2"></p>
+            <p class="title player2" style="display: none;">joueur 2</p>
+            <p class="heading" style="display: none;" id="scoreP2"></p>
           </div>
         </div>
     </nav>
     <nav class="level">
         <div class="level-item has-text-centered is-flex-shrink-5" id="current1">
           <div>
-            <p class="title">Round Joueur 1</p>
-            <p class="heading" id="currentP1"></p>
+            <p class="title player1" style="display: none;">Round Joueur 1</p>
+            <p class="heading" style="display: none;" id="currentP1"></p>
           </div>
         </div>
         <div class="level-item has-text-centered is-flex-shrink-5" id="rollDice">
           <div>
-            <button class="title rollDice" onclick="rollDice(play)">Roll-Dice</button>
-            <button class="title hold" onclick="hold(play)">Hold</button>
-            <h1 id="winner"></h1>
+            <button class="title rollDice button" onclick="rollDice(play)" style="display: none;">Roll-Dice</button>
+            <button class="title hold button" onclick="hold(play)" style="display: none;">Hold</button>
+            <p class="has-text-centered" id="winner"></p>
           </div>
 
         </div>
         <div class="level-item has-text-centered is-flex-shrink-5" id="current2">
           <div>
-            <p class="title">Round Joueur 2</p>
-            <p class="heading" id="currentP2"></p>
+            <p class="title player2" style="display: none;">Round Joueur 2</p>
+            <p class="heading" style="display: none;" id="currentP2"></p>
           </div>
         </div>
     </nav>
-    <div id="confirmation" class="modal has-text-centered" style="display: none;"><p>Etes vous sur de vouloir redémarrer a zero ?</p>
+    <div id="confirmation" class="modal has-text-centered" ><p>Etes vous sur de vouloir redémarrer a zero ?</p>
       <button id="restart" onclick="restart()">oui</button>
       <button id="cancel" onclick ="cancel()">non</button>
     </div>
@@ -71,4 +71,5 @@
 </body>
 
 <script src="JS/script.js"></script>
+<script src="JS/jquery.js"></script>
 </html>

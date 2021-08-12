@@ -67,7 +67,8 @@ body {
 }
 
 #message,
-#looser {
+#looser,
+#winner {
   font-size: 2rem;
 }
 
@@ -75,6 +76,19 @@ body {
   width: 400px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#winner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  color: #ffdff4;
+  border: 5px inset #292d4f;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  background-color: #615fa3;
 }
 
 #confirmation {

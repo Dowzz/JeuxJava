@@ -62,13 +62,24 @@ body {
   border: 5px inset $firstBlue;
 }
 #message,
-#looser {
+#looser,
+#winner {
   font-size: 2rem;
 }
 #message {
   width: 400px;
   margin-left: auto;
   margin-right: auto;
+}
+#winner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  color: $text;
+  border: 5px inset $firstBlue;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: $secondBlue;
 }
 #confirmation {
   font-size: 2rem;
