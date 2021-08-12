@@ -31,8 +31,8 @@ body {
 .game-on,
 .rollDice,
 .hold,
-#restart,
-#cancel {
+.restart,
+.cancel {
   margin: 20px;
   background: $secondBlue;
   color: $text;
@@ -71,7 +71,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-#winner {
+.modal-content {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
@@ -94,6 +94,6 @@ body {
   margin-right: auto;
   border: 5px inset $firstBlue;
 }
-#winner {
-  height: fit-content;
+#win {
+  height: auto;
 }

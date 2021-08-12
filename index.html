@@ -48,9 +48,17 @@
           <div>
             <button class="title rollDice button" onclick="rollDice(play)" style="display: none;">Roll-Dice</button>
             <button class="title hold button" onclick="hold(play)" style="display: none;">Hold</button>
-            <p class="has-text-centered" id="winner"></p>
+            <div class="modal" id="win">
+              <div class="modal-background"></div>
+              <div class="has-text-centered modal-content" >
+                <p id="winner"></p>
+                <div id="replay">Voulez vous rejouer ?
+                  <button class="restart" onclick="restart()">oui</button>
+                  <button class="cancel" onclick ="cancel()">non</button>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
         <div class="level-item has-text-centered is-flex-shrink-5" id="current2">
           <div>
@@ -60,8 +68,8 @@
         </div>
     </nav>
     <div id="confirmation" class="modal has-text-centered" ><p>Etes vous sur de vouloir redémarrer a zero ?</p>
-      <button id="restart" onclick="restart()">oui</button>
-      <button id="cancel" onclick ="cancel()">non</button>
+      <button class="restart" onclick="restart()">oui</button>
+      <button class="cancel" onclick ="cancel()">non</button>
     </div>
     <footer class="footer">
       <div class="content has-text-centered">

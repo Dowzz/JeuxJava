@@ -15,7 +15,6 @@ players = new Array (player1, player2);
 if (play = null){
     document.getElementById('message').innerHTML = "Cliquez d'abord sur New Game";
 }
-document.getElementById('winner').style.display="none";
 
 function newGame(){
     if (newgame === false){
@@ -42,12 +41,14 @@ function newGame(){
 function restart(){
         newgame = false;
         newGame();
-        document.getElementById('confirmation').style.display="none";
-
+        document.getElementById('confirmation').style.display="none"
+        $('#win').removeClass("is-active");
 }
 
 function cancel(){
     document.getElementById('confirmation').style.display="none";
+    $('#win').removeClass("is-active");
+
 }
 
 function rollDice(){
@@ -85,8 +86,9 @@ function hold(){
             play.globalScore = play.globalScore + play.currentScore; 
             if (play.globalScore >100){
                 document.getElementById('message').style.display = "none";
-                document.getElementById('winner').style.display="flex";
+                $('#win').addClass('is-active');
                 document.getElementById('winner').innerHTML = play.name + " a gagné ! félicitations !"
+                newgame=false;
             }
             play.currentScore = 0;
             document.getElementById(play.affichCurrent).innerHTML = play.currentScore;

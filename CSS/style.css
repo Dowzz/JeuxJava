@@ -30,8 +30,8 @@ body {
 .game-on,
 .rollDice,
 .hold,
-#restart,
-#cancel {
+.restart,
+.cancel {
   margin: 20px;
   background: #615fa3;
   color: #ffdff4;
@@ -78,7 +78,7 @@ body {
   margin-right: auto;
 }
 
-#winner {
+.modal-content {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
@@ -108,9 +108,7 @@ body {
   border: 5px inset #292d4f;
 }
 
-#winner {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+#win {
+  height: auto;
 }
 /*# sourceMappingURL=Style.css.map */
