@@ -1,3 +1,96 @@
 body {
   font-family: "Lato", sans-serif;
+  background: #140f0c;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  -webkit-box-shadow: 10px 5px 5px black;
+          box-shadow: 10px 5px 5px black;
+  border: 5px inset #292d4f;
 }
+
+#dice {
+  font-size: 12rem;
+  color: #615fa3;
+}
+
+.heading {
+  font-size: 5rem;
+}
+
+.n-jeu {
+  background: #615fa3;
+  border-radius: 20px;
+  color: #ffdff4;
+  -webkit-box-shadow: 10px 5px 5px black;
+          box-shadow: 10px 5px 5px black;
+  border: 5px inset #292d4f;
+}
+
+.game-on,
+.rollDice,
+.hold,
+#restart,
+#cancel {
+  margin: 20px;
+  background: #615fa3;
+  color: #ffdff4;
+  border-radius: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-box-shadow: 10px 5px 5px black;
+          box-shadow: 10px 5px 5px black;
+  border: 5px inset #292d4f;
+}
+
+.rollDice:hover,
+.hold:hover,
+.game-on:hover {
+  background-color: #292d4f;
+}
+
+.level-item {
+  color: #615fa3;
+  border-radius: 15px;
+}
+
+.footer {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #615fa3;
+  color: #ffdff4;
+  -webkit-box-shadow: 10px 5px 5px black;
+          box-shadow: 10px 5px 5px black;
+  border: 5px inset #292d4f;
+}
+
+#message,
+#looser {
+  font-size: 2rem;
+}
+
+#message {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#confirmation {
+  font-size: 2rem;
+  color: #615fa3;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 75%;
+  background-color: #140f0c;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 10px 5px 5px black;
+          box-shadow: 10px 5px 5px black;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px inset #292d4f;
+}
+/*# sourceMappingURL=Style.css.map */
