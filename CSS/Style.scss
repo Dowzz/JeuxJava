@@ -46,7 +46,9 @@ body {
 }
 .rollDice:hover,
 .hold:hover,
-.game-on:hover {
+.game-on:hover,
+.restart:hover,
+.cancel:hover {
   background-color: $firstBlue;
 }
 .level-item {
