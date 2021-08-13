@@ -9,11 +9,6 @@ body {
   border: 5px inset #292d4f;
 }
 
-#dice {
-  font-size: 12rem;
-  color: #615fa3;
-}
-
 .heading {
   font-size: 5rem;
 }
@@ -242,5 +237,24 @@ body {
 .container {
   position: relative;
   display: inline-block;
+}
+
+.title {
+  padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .level {
+    display: inherit;
+  }
+  #hold1,
+  #hold2 {
+    float: left;
+    width: 40%;
+  }
+  #round1,
+  #round2 {
+    overflow: auto;
+  }
 }
 /*# sourceMappingURL=Style.css.map */

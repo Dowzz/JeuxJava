@@ -13,10 +13,6 @@ body {
   border: 5px inset $firstBlue;
 }
 
-#dice {
-  font-size: 12rem;
-  color: $secondBlue;
-}
 .heading {
   font-size: 5rem;
 }
@@ -215,6 +211,21 @@ body {
   position: relative;
   display: inline-block;
 }
+.title {
+  padding: 10px;
+}
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
+  .level {
+    display: inherit;
+  }
+  #hold1,
+  #hold2 {
+    float: left;
+    width: 40%;
+  }
+  #round1,
+  #round2 {
+    overflow: auto;
+  }
 }

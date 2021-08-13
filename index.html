@@ -19,9 +19,15 @@
     </div>
     <nav class="level">
         <div class="level-item has-text-centered is-flex-shrink-5 joueur1">
-          <div>
+          <div id="hold1">
             <p class="title player1" style="display: none;">joueur 1</p>
             <p class="heading" style="display: none;" id="scoreP1"></p>
+          </div>
+          <div class="level-item has-text-centered is-flex-shrink-5" id="current1">
+            <div id="round1">
+              <p class="title player1" style="display: none;">Round Joueur 1</p>
+              <p class="heading" style="display: none;" id="currentP1"></p>
+            </div>
           </div>
         </div>
         <div class="level-item has-text-centered is-flex-shrink-5 deScore" >
@@ -67,20 +73,21 @@
             <p id="message" style="display: none;"></p>            
           </div>
         </div>
-        <div class="level-item has-text-centered is-flex-shrink-5 class joueur2">
-          <div>
+        <div class="level-item has-text-centered is-flex-shrink-5 joueur2">
+          <div id="hold2">
             <p class="title player2" style="display: none;">joueur 2</p>
             <p class="heading" style="display: none;" id="scoreP2"></p>
+          </div>
+          <div class="level-item has-text-centered is-flex-shrink-5" id="current2">
+            <div id="round2">
+              <p class="title player2" style="display: none;">Round Joueur 2</p>
+              <p class="heading" style="display: none;" id="currentP2"></p>
+            </div>
           </div>
         </div>
     </nav>
     <nav class="level">
-        <div class="level-item has-text-centered is-flex-shrink-5" id="current1">
-          <div>
-            <p class="title player1" style="display: none;">Round Joueur 1</p>
-            <p class="heading" style="display: none;" id="currentP1"></p>
-          </div>
-        </div>
+       
         <div class="level-item has-text-centered is-flex-shrink-5" id="rollDice">
           <div>
             <button class="title rollDice button" onclick="rollDice(play)" style="display: none;">Roll-Dice</button>
@@ -90,12 +97,6 @@
                 <p id="winner"></p>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="level-item has-text-centered is-flex-shrink-5" id="current2">
-          <div>
-            <p class="title player2" style="display: none;">Round Joueur 2</p>
-            <p class="heading" style="display: none;" id="currentP2"></p>
           </div>
         </div>
     </nav>
