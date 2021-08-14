@@ -18,7 +18,6 @@
         <button type="button" class="game-on " onclick="newGame()">Nouvelle partie</button>
     </div>
     <nav class="level">
-      
         <div class="level-item has-text-centered is-flex-shrink-5 joueur1">
           <p class ="joueur-name title" id="name-one" style="display: none;">Joueur 1</p>
           <div id="hold1">
@@ -72,8 +71,7 @@
                 </div>
               </div>
            </div>
-            <p id="message" style="display: none;"></p>      
-            <div id ="looser"></div>      
+            <p id="message" style="display: none;"></p>           
           </div>
         </div>
         <div class="level-item has-text-centered is-flex-shrink-5 joueur2">
@@ -94,11 +92,11 @@
        
         <div class="level-item has-text-centered is-flex-shrink-5" id="rollDice">
           <div>
-            <button class="title rollDice button" onclick="rollDice(play)" style="display: none;">Roll-Dice</button>
-            <button class="title hold button" onclick="hold(play)" style="display: none;">Hold</button>
-            <div class="modal modal-fx-3dSlit" style="background-color : 'rgba(10,10,10,10.10)'" id="win">
+            <button class="title rollDice button" onclick="rollDice(play)" style="display: none;">lancer</button>
+            <button class="title hold button" onclick="hold(play)" style="display: none;">Garder</button>
+            <div class="modal modal-fx-3dSlit" style="background-color : 'rgba(10,10,10,10.10)'" id="window">
               <div class="has-text-centered modal-content" >
-                <p id="winner"></p>
+                <p id="filler"></p>
               </div>
             </div>
           </div>
@@ -110,7 +108,7 @@
       </div>
     </footer>   
 </body>
-<script type="text/javascript" src="JS/modal-fx.min.js"></script>
+<script src="JS/modal-fx.min.js"></script>
 <script src="JS/script.js"></script>
 <script src="JS/jquery.js"></script>
 </html>

@@ -1,138 +1,167 @@
+//je crée la classe player
 class Player {
-    constructor(id, globalScore, currentScore, affichScore, affichCurrent, name){
+    constructor(id, globalScore, currentScore, affichScore, affichCurrent, name, animator){
         this.id = id; 
         this.globalScore = globalScore;
         this.currentScore = currentScore;
         this.affichScore = affichScore;
         this.affichCurrent = affichCurrent;
         this.name = name;
+        this.animator = animator;
     }
+    turn(){
+        $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
+    }
+    current(){
+        $(document.getElementById(play.affichCurrent)).html(play.currentScore);
+    }
+    global(){
+        $(document.getElementById(play.affichScore)).html(play.globalScore);   
+    }
+    
 }
+//j'initialise certaines valeurs
+
 newgame = false;
-player1 = new Player("player1", 0, 0, "scoreP1", "currentP1", "joueur 1");
-player2 = new Player("player2", 0, 0, "scoreP2", "currentP2", "joueur 2");
+player1 = new Player("player1", 0, 0, "scoreP1", "currentP1", "joueur 1", "name-one");
+player2 = new Player("player2", 0, 0, "scoreP2", "currentP2", "joueur 2", "name-two");
 players = new Array (player1, player2);
-var elDiceOne = document.getElementById('dice1');
 document.getElementById('animation').style.display="none";
+
+//fonction lancement du jeu
 
 function newGame(){
     if (newgame === false){
         $(document.getElementById('animation')).fadeIn(500)
-    play = players[0];
-    $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
+        $(document.getElementById('name-one')).addClass('selection');
         players.forEach(player => {
+            play = player;
+            play.turn()
             $(document.getElementsByClassName(player.id)).fadeIn(500);
             $(document.getElementsByClassName('heading')).fadeIn(500);
             $(document.getElementsByClassName('joueur-name')).fadeIn(500);
-            $(document.getElementById('dice')).html("");
-            $(document.getElementById(player.affichScore)).html(player.globalScore = 0);
-            $(document.getElementById(player.affichCurrent)).html(player.currentScore = 0);
+            player.global();
+            player.current();
         });
+        play = players[0]
         $(document.getElementById('message')).fadeIn(1000);
         $(document.getElementsByClassName('button')).fadeIn(500);
-        $(document.getElementById('message')).show();
         $(document.getElementById('message')).html("Faites rouler le dé !");
         newgame = true;    
     }else{
-        $('#win').addClass('is-active');
-        $(document.getElementById('winner')).html(
+        $('#window').addClass('is-active');
+        $(document.getElementById('filler')).html(
             "<p>Etes vous sur de vouloir recommencer la partie ?</p>"+
             "<button class=\"restart\" onclick=\"restart()\">oui</button>"+
             "<button class=\"cancel\" onclick =\"cancel()\">non</button>");;
     }
 }
 
+//fonction pour redemarrer la partie
+
 function restart(){
     newgame = false;
     newGame();
-    $('#win').removeClass("is-active");
+    $('#window').removeClass("is-active");
 }
+
+//function annulation du restart
 
 function cancel(){
-    $('#win').removeClass("is-active");
+    $('#window').removeClass("is-active");
 
 }
+
+//fonction si victoire
+
+function winner(){
+    $(document.getElementById('message')).hide();
+                    $('#window').addClass('is-active');
+                    $(document.getElementById('filler')).html(
+                        play.name + " a gagné ! félicitations !"+
+                        "<p>Voulez vous rejouer ?</p>"+
+                        "<button class=\"restart\" onclick=\"restart()\">oui</button>"+
+                        "<button class=\"cancel\" onclick =\"cancel()\">non</button>");
+                    newgame=false;
+}
+
+//fonction lancement du dé
 
 function rollDice(){
     if (newgame === true){
-        $(document.getElementById('message')).html("");
-        $(document.getElementById('looser')).html("");
+        
         number=Math.floor( Math.random() * 6 )+1;
-
         for (i = 1; i <= 6; i++) {
-            elDiceOne.classList.remove('show-' + i);
+            $(document.getElementById('dice1')).removeClass('show-' + i);
             if (number === i) {
-              elDiceOne.classList.add('show-' + i);
+                $(document.getElementById('message')).html(number);
+                $(document.getElementById('dice1')).addClass('show-' + i);
             }
         }
         if(number === 1){
             play.currentScore=0;
-            $(document.getElementById(play.affichCurrent)).html(play.currentScore);
+                play.current();
                 if (play === players[0]){
                     play = players[1];
-                    $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
-                    $(document.getElementById('name-two')).addClass('selection');
-                    $(document.getElementById('name-one')).removeClass('selection');
-                    
-                    
-                    
+                    play.turn();
+                    players.forEach(player => {
+                        $(document.getElementById(player.animator)).toggleClass('selection');
+                    });
                 }
                 else{
                     play = players[0];
-                    $(document.getElementById('name-one')).addClass('selection');
-                    $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
-                    $(document.getElementById('name-two')).removeClass('selection');
+                    players.forEach(player => {
+                        $(document.getElementById(player.animator)).toggleClass('selection');
+                    });
+                    play.turn();
                 }
-            $(document.getElementById('looser')).html("Pas de bol...");
-            $(document.getElementById('message')).html("Au tour du "+play.name);
+            $(document.getElementById('message')).html("1, Pas de bol...");
         }
         else{
             play.currentScore = play.currentScore+number;
-            $(document.getElementById(play.affichCurrent)).html(play.currentScore);
+            play.current();
         }
     }
     else{ 
         $(document.getElementById('message')).html("Cliquez d'abord sur new game");
     }
 }
+
+//fonction de sauvegarde du score global
+
 function hold(){
     if (newgame === true){
         if (play.currentScore !==0){
                 play.globalScore = play.globalScore + play.currentScore; 
                 if (play.globalScore >100){
-                    $(document.getElementById('message')).hide();
-                    $('#win').addClass('is-active');
-                    $(document.getElementById('winner')).html(
-                        play.name + " a gagné ! félicitations !"+
-                        "<p>Voulez vous rejouer ?</p>"+
-                        "<button class=\"restart\" onclick=\"restart()\">oui</button>"+
-                        "<button class=\"cancel\" onclick =\"cancel()\">non</button>");
-                    newgame=false;
+                    winner();
                 }
             play.currentScore = 0;
-            $(document.getElementById(play.affichCurrent)).html(play.currentScore);
-            $(document.getElementById(play.affichScore)).html(play.globalScore);
+            play.current();
+            play.global();
             if (play === players[0]){
                 play = players[1];
-                $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
-                $(document.getElementById('name-two')).addClass('selection');
-                $(document.getElementById('name-one')).removeClass('selection');
+                play.turn();
+                players.forEach(player => {
+                    $(document.getElementById(player.animator)).toggleClass('selection');
+                });
             }
             else{
                 play = players[0];
-                $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
-                $(document.getElementById('name-one')).addClass('selection');
-                $(document.getElementById('name-two')).removeClass('selection');
+                play.turn
+                players.forEach(player => {
+                    $(document.getElementById(player.animator)).toggleClass('selection');
+                });
             }
             $(document.getElementById('message')).html("Score sauvegardé");
 
         }
         else{
-            $(document.getElementById('message')).html("Vous ne pouvez pas sauvegarder sans lancer le dé");
+            $(document.getElementById('message')).html("Vous devez lancer le dé");
         }
     }
     else 
-        $(document.getElementById('message')).html("Cliquez d'abord sur new game");
+        $(document.getElementById('message')).html("Cliquez d'abord sur nouvelle partie");
 }
 
 

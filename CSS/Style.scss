@@ -18,6 +18,7 @@ body {
 }
 .tour-joueur {
   font-size: 2rem;
+  padding-bottom: 20px;
 }
 .selection {
   animation-name: changeColor;
@@ -79,11 +80,13 @@ body {
   border: 5px inset $firstBlue;
 }
 #message,
-#looser,
-#winner {
+#looser {
   font-size: 2rem;
   height: 50px;
   padding: 20px;
+}
+#winner {
+  font-size: 2rem;
 }
 #message {
   width: 400px;

@@ -15,6 +15,7 @@ body {
 
 .tour-joueur {
   font-size: 2rem;
+  padding-bottom: 20px;
 }
 
 .selection {
@@ -101,11 +102,14 @@ body {
 }
 
 #message,
-#looser,
-#winner {
+#looser {
   font-size: 2rem;
   height: 50px;
   padding: 20px;
+}
+
+#winner {
+  font-size: 2rem;
 }
 
 #message {
