@@ -27,13 +27,15 @@ player1 = new Player("player1", 0, 0, "scoreP1", "currentP1", "joueur 1", "name-
 player2 = new Player("player2", 0, 0, "scoreP2", "currentP2", "joueur 2", "name-two");
 players = new Array (player1, player2);
 document.getElementById('animation').style.display="none";
-
 //fonction lancement du jeu
 
 function newGame(){
     if (newgame === false){
         $(document.getElementById('animation')).fadeIn(500)
+        $(document.getElementsByClassName('deScore')).fadeIn(500);
         $(document.getElementById('name-one')).addClass('selection');
+        $(document.getElementsByClassName('rollDice')).addClass('wiggle');
+        
         players.forEach(player => {
             play = player;
             play.turn()
@@ -91,7 +93,8 @@ function winner(){
 
 function rollDice(){
     if (newgame === true){
-        
+        $(document.getElementById(play.affichScore)).removeClass('bigger');
+        $(document.getElementsByClassName('rollDice')).removeClass('wiggle');
         number=Math.floor( Math.random() * 6 )+1;
         for (i = 1; i <= 6; i++) {
             $(document.getElementById('dice1')).removeClass('show-' + i);
@@ -107,7 +110,7 @@ function rollDice(){
                     play = players[1];
                     play.turn();
                     players.forEach(player => {
-                        $(document.getElementById(player.animator)).toggleClass('selection');
+                        $(document.getElementById(player.animator)).toggleClass('selection')
                     });
                 }
                 else{
@@ -141,6 +144,7 @@ function hold(){
             play.currentScore = 0;
             play.current();
             play.global();
+            $(document.getElementById(play.affichScore)).addClass('bigger');
             if (play === players[0]){
                 play = players[1];
                 play.turn();

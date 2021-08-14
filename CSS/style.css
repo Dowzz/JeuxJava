@@ -11,9 +11,12 @@ body {
 
 .heading {
   font-size: 5rem;
+  height: 150px;
 }
 
-.tour-joueur {
+.tour-joueur,
+.player1,
+.player2 {
   font-size: 2rem;
   padding-bottom: 20px;
 }
@@ -51,6 +54,33 @@ body {
   }
 }
 
+.bigger {
+  -webkit-animation-name: bigger;
+          animation-name: bigger;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+@-webkit-keyframes bigger {
+  0% {
+    font-size: 7rem;
+  }
+  100% {
+    font-size: 5rem;
+  }
+}
+
+@keyframes bigger {
+  0% {
+    font-size: 7rem;
+  }
+  100% {
+    font-size: 5rem;
+  }
+}
+
 .n-jeu {
   background: #615fa3;
   border-radius: 20px;
@@ -58,6 +88,10 @@ body {
   -webkit-box-shadow: 10px 5px 5px black;
           box-shadow: 10px 5px 5px black;
   border: 5px inset #292d4f;
+}
+
+.title {
+  padding: 10px;
 }
 
 .game-on,
@@ -83,10 +117,85 @@ body {
 .game-on:hover,
 .restart:hover,
 .cancel:hover {
-  background-color: #292d4f;
+  background: linear-gradient(-45deg, transparent calc(100% / 3), rgba(0, 0, 0, 0.5), transparent calc(200% / 3)) bottom right/350% 100% no-repeat;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
+}
+
+.wiggle {
+  -webkit-animation: wiggle 2s linear infinite;
+          animation: wiggle 2s linear infinite;
+}
+
+@-webkit-keyframes wiggle {
+  0%,
+  7% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  15% {
+    -webkit-transform: rotateZ(-15deg);
+            transform: rotateZ(-15deg);
+  }
+  20% {
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+  }
+  25% {
+    -webkit-transform: rotateZ(-10deg);
+            transform: rotateZ(-10deg);
+  }
+  30% {
+    -webkit-transform: rotateZ(6deg);
+            transform: rotateZ(6deg);
+  }
+  35% {
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  7% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  15% {
+    -webkit-transform: rotateZ(-15deg);
+            transform: rotateZ(-15deg);
+  }
+  20% {
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+  }
+  25% {
+    -webkit-transform: rotateZ(-10deg);
+            transform: rotateZ(-10deg);
+  }
+  30% {
+    -webkit-transform: rotateZ(6deg);
+            transform: rotateZ(6deg);
+  }
+  35% {
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
 }
 
 .level-item {
+  display: -ms-grid;
+  display: grid;
   color: #615fa3;
   border-radius: 15px;
 }
@@ -116,6 +225,7 @@ body {
   width: 400px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 50px;
 }
 
 .modal-content {
@@ -282,12 +392,8 @@ body {
   display: inline-block;
 }
 
-.title {
-  padding: 10px;
-}
-
-@media screen and (max-width: 1000px) {
-  .level {
+@media screen and (max-width: 764px) {
+  .level-item {
     display: inherit;
   }
   #hold1,
