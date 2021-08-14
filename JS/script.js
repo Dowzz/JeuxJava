@@ -40,6 +40,8 @@ function newGame(){
             $(document.getElementsByClassName(player.id)).fadeIn(500);
             $(document.getElementsByClassName('heading')).fadeIn(500);
             $(document.getElementsByClassName('joueur-name')).fadeIn(500);
+            play.globalScore = 0;
+            play.currentScore=0;
             player.global();
             player.current();
         });
@@ -133,7 +135,7 @@ function hold(){
     if (newgame === true){
         if (play.currentScore !==0){
                 play.globalScore = play.globalScore + play.currentScore; 
-                if (play.globalScore >100){
+                if (play.globalScore >=100){
                     winner();
                 }
             play.currentScore = 0;
