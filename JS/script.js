@@ -19,9 +19,11 @@ function newGame(){
     if (newgame === false){
         $(document.getElementById('animation')).fadeIn(500)
     play = players[0];
+    $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
         players.forEach(player => {
             $(document.getElementsByClassName(player.id)).fadeIn(500);
             $(document.getElementsByClassName('heading')).fadeIn(500);
+            $(document.getElementsByClassName('joueur-name')).fadeIn(500);
             $(document.getElementById('dice')).html("");
             $(document.getElementById(player.affichScore)).html(player.globalScore = 0);
             $(document.getElementById(player.affichCurrent)).html(player.currentScore = 0);
@@ -53,6 +55,7 @@ function cancel(){
 
 function rollDice(){
     if (newgame === true){
+        $(document.getElementById('message')).html("");
         $(document.getElementById('looser')).html("");
         number=Math.floor( Math.random() * 6 )+1;
 
@@ -67,16 +70,24 @@ function rollDice(){
             $(document.getElementById(play.affichCurrent)).html(play.currentScore);
                 if (play === players[0]){
                     play = players[1];
+                    $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
+                    $(document.getElementById('name-two')).addClass('selection');
+                    $(document.getElementById('name-one')).removeClass('selection');
+                    
+                    
+                    
                 }
                 else{
                     play = players[0];
+                    $(document.getElementById('name-one')).addClass('selection');
+                    $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
+                    $(document.getElementById('name-two')).removeClass('selection');
                 }
             $(document.getElementById('looser')).html("Pas de bol...");
             $(document.getElementById('message')).html("Au tour du "+play.name);
         }
         else{
             play.currentScore = play.currentScore+number;
-            $(document.getElementById('message')).html("round du " + play.name +" <br> "+ "dé : " + number +" -|- score : "+ play.currentScore);
             $(document.getElementById(play.affichCurrent)).html(play.currentScore);
         }
     }
@@ -103,11 +114,17 @@ function hold(){
             $(document.getElementById(play.affichScore)).html(play.globalScore);
             if (play === players[0]){
                 play = players[1];
+                $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
+                $(document.getElementById('name-two')).addClass('selection');
+                $(document.getElementById('name-one')).removeClass('selection');
             }
             else{
                 play = players[0];
+                $(document.getElementsByClassName('tour-joueur')).html("Tour du "+play.name);
+                $(document.getElementById('name-one')).addClass('selection');
+                $(document.getElementById('name-two')).removeClass('selection');
             }
-            $(document.getElementById('message')).html("Score sauvegardé.<br> Au tour du " + play.name);
+            $(document.getElementById('message')).html("Score sauvegardé");
 
         }
         else{

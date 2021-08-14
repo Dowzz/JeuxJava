@@ -13,6 +13,43 @@ body {
   font-size: 5rem;
 }
 
+.tour-joueur {
+  font-size: 2rem;
+}
+
+.selection {
+  -webkit-animation-name: changeColor;
+          animation-name: changeColor;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes changeColor {
+  0% {
+    color: #363636;
+  }
+  50% {
+    color: #615fa3;
+  }
+  100% {
+    color: #363636;
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    color: #363636;
+  }
+  50% {
+    color: #615fa3;
+  }
+  100% {
+    color: #363636;
+  }
+}
+
 .n-jeu {
   background: #615fa3;
   border-radius: 20px;
@@ -67,6 +104,8 @@ body {
 #looser,
 #winner {
   font-size: 2rem;
+  height: 50px;
+  padding: 20px;
 }
 
 #message {

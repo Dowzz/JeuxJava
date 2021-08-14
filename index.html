@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./CSS/bulma.min.css">
     <link rel="stylesheet" href="./CSS/modal-fx.min.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Jeux-Java</title>
+    <title>Dice Game</title>
 </head>
 <body>
     <div class="level has-text-centered title is-block is-justify-content-center n-jeu">
@@ -18,20 +18,23 @@
         <button type="button" class="game-on " onclick="newGame()">Nouvelle partie</button>
     </div>
     <nav class="level">
+      
         <div class="level-item has-text-centered is-flex-shrink-5 joueur1">
+          <p class ="joueur-name title" id="name-one" style="display: none;">Joueur 1</p>
           <div id="hold1">
-            <p class="title player1" style="display: none;">joueur 1</p>
+            <p class="title player1" style="display: none;">Score</p>
             <p class="heading" style="display: none;" id="scoreP1"></p>
           </div>
           <div class="level-item has-text-centered is-flex-shrink-5" id="current1">
             <div id="round1">
-              <p class="title player1" style="display: none;">Round Joueur 1</p>
+              <p class="title player1" style="display: none;">Round</p>
               <p class="heading" style="display: none;" id="currentP1"></p>
             </div>
           </div>
         </div>
         <div class="level-item has-text-centered is-flex-shrink-5 deScore" >
           <div>
+            <div class="tour-joueur"></div>
             <div class="container" id="animation">
               <div id="dice1" class="dice dice-one">
                 <div id="dice-one-side-one" class="side one">
@@ -69,18 +72,19 @@
                 </div>
               </div>
            </div>
-            <div id ="looser"></div>
-            <p id="message" style="display: none;"></p>            
+            <p id="message" style="display: none;"></p>      
+            <div id ="looser"></div>      
           </div>
         </div>
         <div class="level-item has-text-centered is-flex-shrink-5 joueur2">
+          <p class="joueur-name title" id="name-two" style="display: none;">Joueur 2</p>
           <div id="hold2">
-            <p class="title player2" style="display: none;">joueur 2</p>
+            <p class="title player2" style="display: none;">Score</p>
             <p class="heading" style="display: none;" id="scoreP2"></p>
           </div>
           <div class="level-item has-text-centered is-flex-shrink-5" id="current2">
             <div id="round2">
-              <p class="title player2" style="display: none;">Round Joueur 2</p>
+              <p class="title player2" style="display: none;">Round</p>
               <p class="heading" style="display: none;" id="currentP2"></p>
             </div>
           </div>
