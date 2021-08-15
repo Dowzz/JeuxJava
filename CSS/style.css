@@ -1,5 +1,5 @@
 html {
-  background: linear-gradient(-45deg, #140f0c, #292d4f, #615fa3, #ffdff4);
+  background: linear-gradient(-45deg, #363636, #292d4f, #615fa3, #ffdff4);
   background-size: 400% 400%;
   -webkit-animation: gradient 15s ease infinite;
           animation: gradient 15s ease infinite;
