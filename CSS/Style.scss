@@ -8,6 +8,18 @@ html {
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
+body {
+  position: relative;
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(-45deg, $grey, $firstBlue, $secondBlue);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 10px 5px 5px black;
+  border: 5px inset $firstBlue;
+}
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -18,16 +30,6 @@ html {
   100% {
     background-position: 0% 50%;
   }
-}
-body {
-  position: relative;
-  font-family: "Lato", sans-serif;
-  background: $black;
-  margin: 20px;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 10px 5px 5px black;
-  border: 5px inset $firstBlue;
 }
 
 .heading {
@@ -80,6 +82,7 @@ body {
 }
 .title {
   padding: 10px;
+  color: $black;
 }
 .game-on,
 .rollDice,
