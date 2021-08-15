@@ -8,7 +8,7 @@ html {
 body {
   position: relative;
   font-family: "Lato", sans-serif;
-  background: linear-gradient(-45deg, #2c1410, #615fa3, #140f0c);
+  background: linear-gradient(-45deg, #2c1410, #292d4f, #140f0c);
   background-size: 400% 400%;
   -webkit-animation: gradient 15s ease infinite;
           animation: gradient 15s ease infinite;
