@@ -13,7 +13,7 @@ html {
 body {
   position: relative;
   font-family: "Lato", sans-serif;
-  background: linear-gradient(-45deg, $purple, $secondBlue);
+  background: linear-gradient(-45deg, $purple, $secondBlue, $black);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   margin: 20px;
