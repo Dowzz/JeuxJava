@@ -322,6 +322,7 @@ body {
   }
   .title {
     padding: inherit;
+    font-size: inherit;
   }
   .n-jeu {
     display: flex;
@@ -361,22 +362,13 @@ body {
   }
   @keyframes bigger2 {
     0% {
-      font-size: 2rem;
-      color: $text;
-    }
-    50% {
-      font-size: 1rem;
-      color: $secondBlue;
+      font-size: 0rem;
     }
     100% {
       font-size: 2rem;
     }
   }
-  .title,
-  #message,
-  .tour-joueur {
-    font-size: 1.5rem;
-  }
+
   .rollDice,
   .hold {
     padding: 5px;

@@ -94,6 +94,7 @@ function winner(){
 
 function rollDice(){
     if (newgame === true){
+        $(document.getElementById('message')).removeClass('bigger');
         $(document.getElementById(play.affichScore)).removeClass('bigger');
         $(document.getElementById(play.currentScore)).removeClass('bigger');
         $(document.getElementsByClassName('rollDice')).removeClass('wiggle');
@@ -113,6 +114,7 @@ function rollDice(){
                     play.turn();
                     players.forEach(player => {
                         $(document.getElementById(player.animator)).toggleClass('selection')
+                        
                     });
                 }
                 else{
@@ -122,7 +124,8 @@ function rollDice(){
                     });
                     play.turn();
                 }
-            $(document.getElementById('message')).html("1, Pas de bol...");
+            $(document.getElementById('message')).html("<div style=\"color:white\">"+ "1, Pas de bol...");
+            $(document.getElementById('message')).toggleClass('bigger');
         }
         else{
             play.currentScore = play.currentScore+number;
@@ -161,7 +164,7 @@ function hold(){
                     $(document.getElementById(player.animator)).toggleClass('selection');
                 });
             }
-            $(document.getElementById('message')).html("Score sauvegardé");
+            $(document.getElementById('message')).html("<div style=\"color:white\">"+"Score sauvegardé");
 
         }
         else{
