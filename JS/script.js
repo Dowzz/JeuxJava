@@ -38,7 +38,6 @@ function newGame(){
         
         players.forEach(player => {
             play = player;
-            play.turn()
             $(document.getElementsByClassName(player.id)).fadeIn(500);
             $(document.getElementsByClassName('heading')).fadeIn(500);
             $(document.getElementsByClassName('joueur-name')).fadeIn(500);
@@ -48,6 +47,7 @@ function newGame(){
             player.current();
         });
         play = players[0]
+        play.turn()
         $(document.getElementById('message')).fadeIn(1000);
         $(document.getElementsByClassName('button')).fadeIn(500);
         $(document.getElementById('message')).html("Faites rouler le dé !");
@@ -94,6 +94,7 @@ function winner(){
 function rollDice(){
     if (newgame === true){
         $(document.getElementById(play.affichScore)).removeClass('bigger');
+        $(document.getElementById(play.currentScore)).removeClass('bigger');
         $(document.getElementsByClassName('rollDice')).removeClass('wiggle');
         number=Math.floor( Math.random() * 6 )+1;
         for (i = 1; i <= 6; i++) {

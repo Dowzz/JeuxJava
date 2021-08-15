@@ -1,4 +1,5 @@
 body {
+  position: relative;
   font-family: "Lato", sans-serif;
   background: #140f0c;
   margin: 20px;
@@ -65,7 +66,7 @@ body {
 
 @-webkit-keyframes bigger {
   0% {
-    font-size: 7rem;
+    font-size: 0rem;
   }
   100% {
     font-size: 5rem;
@@ -74,7 +75,7 @@ body {
 
 @keyframes bigger {
   0% {
-    font-size: 7rem;
+    font-size: 0rem;
   }
   100% {
     font-size: 5rem;
@@ -82,6 +83,7 @@ body {
 }
 
 .n-jeu {
+  display: block;
   background: #615fa3;
   border-radius: 20px;
   color: #ffdff4;
@@ -210,8 +212,7 @@ body {
   border: 5px inset #292d4f;
 }
 
-#message,
-#looser {
+#message {
   font-size: 2rem;
   height: 50px;
   padding: 20px;
@@ -222,7 +223,6 @@ body {
 }
 
 #message {
-  width: 400px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 50px;
@@ -393,17 +393,119 @@ body {
 }
 
 @media screen and (max-width: 764px) {
+  .game-on {
+    padding: 0px;
+    margin: 0px;
+  }
+  .title {
+    padding: inherit;
+  }
+  .n-jeu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .n-jeu button {
+    margin-left: 10px;
+  }
+  #rollDice button {
+    margin: 0px;
+  }
   .level-item {
     display: inherit;
+  }
+  .deScore {
+    margin-bottom: inherit;
   }
   #hold1,
   #hold2 {
     float: left;
-    width: 40%;
+    width: 50%;
   }
   #round1,
   #round2 {
     overflow: auto;
+  }
+  .heading {
+    font-size: 2rem;
+    height: auto;
+  }
+  .bigger {
+    -webkit-animation-name: bigger2;
+            animation-name: bigger2;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+  }
+  @-webkit-keyframes bigger2 {
+    0% {
+      font-size: 1rem;
+    }
+    100% {
+      font-size: 2rem;
+    }
+  }
+  @keyframes bigger2 {
+    0% {
+      font-size: 1rem;
+    }
+    100% {
+      font-size: 2rem;
+    }
+  }
+  .title,
+  #message,
+  .tour-joueur {
+    font-size: 1.5rem;
+  }
+  .rollDice,
+  .hold {
+    padding: 5px;
+    font-size: 1rem;
+  }
+  .deScore {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+  }
+  .dice {
+    width: 50px;
+    height: 50px;
+  }
+  .side {
+    width: 50px;
+    height: 50px;
+    border: inherit;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    margin: -5px 2.5px 2.5px -5px;
+  }
+  .side:nth-child(1) {
+    -webkit-transform: translateZ(1.55em);
+            transform: translateZ(1.55em);
+  }
+  .side:nth-child(6) {
+    -webkit-transform: rotateY(90deg) translateZ(1.55em);
+            transform: rotateY(90deg) translateZ(1.55em);
+  }
+  .side:nth-child(3) {
+    -webkit-transform: rotateY(-90deg) translateZ(1.55em);
+            transform: rotateY(-90deg) translateZ(1.55em);
+  }
+  .side:nth-child(4) {
+    -webkit-transform: rotateX(90deg) translateZ(1.55em);
+            transform: rotateX(90deg) translateZ(1.55em);
+  }
+  .side:nth-child(5) {
+    -webkit-transform: rotateX(-90deg) translateZ(1.55em);
+            transform: rotateX(-90deg) translateZ(1.55em);
+  }
+  .side:nth-child(2) {
+    -webkit-transform: rotateY(-180deg) translateZ(1.55em);
+            transform: rotateY(-180deg) translateZ(1.55em);
   }
 }
 /*# sourceMappingURL=Style.css.map */

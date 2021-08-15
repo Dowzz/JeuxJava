@@ -13,7 +13,7 @@
     <title>Dice Game</title>
 </head>
 <body>
-    <div class="level has-text-centered title is-block is-justify-content-center n-jeu">
+    <div class="level has-text-centered title is-justify-content-center n-jeu">
         <p>Dice Game</p>
         <button type="button" class="game-on" id="gameOn" onclick="newGame()">Nouvelle partie</button>
     </div>
@@ -27,11 +27,11 @@
           <div class="level-item has-text-centered is-flex-shrink-5" id="current1">
             <div id="round1">
               <p class="title player1" style="display: none;">Round</p>
-              <p class="heading" style="display: none;" id="currentP1"></p>
+              <p class="heading bigger" style="display: none;" id="currentP1"></p>
             </div>
           </div>
         </div>
-        <div class="level-item has-text-centered is-flex-shrink-5 deScore" style="display: none;" >
+        <div class="level-item has-text-centered deScore" style="display: none;" >
           <div>
             <div class="tour-joueur"></div>
             <div class="container" id="animation">
@@ -83,14 +83,14 @@
           <div class="level-item has-text-centered is-flex-shrink-5" id="current2">
             <div id="round2">
               <p class="title player2" style="display: none;">Round</p>
-              <p class="heading" style="display: none;" id="currentP2"></p>
+              <p class="heading bigger" style="display: none;" id="currentP2"></p>
             </div>
           </div>
         </div>
     </nav>
-    <nav class="level">
+    <nav class="level zone-bouton">
         <div class="level-item has-text-centered is-flex-shrink-5" id="rollDice">
-          <div>
+          <div style="display: block;">
             <button class="title rollDice button" onclick="rollDice(play)" style="display: none;">lancer</button>
             <button class="title hold button" onclick="hold(play)" style="display: none;">Garder</button>
             <div class="modal modal-fx-3dSlit" style="background-color : 'rgba(10,10,10,10.10)'" id="window">
