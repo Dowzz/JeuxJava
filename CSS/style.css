@@ -8,7 +8,7 @@ html {
 body {
   position: relative;
   font-family: "Lato", sans-serif;
-  background: linear-gradient(-45deg, #363636, #292d4f, #615fa3);
+  background: linear-gradient(-45deg, #2c1026, #292d4f);
   background-size: 400% 400%;
   -webkit-animation: gradient 15s ease infinite;
           animation: gradient 15s ease infinite;
@@ -67,25 +67,25 @@ body {
 
 @-webkit-keyframes changeColor {
   0% {
-    color: #363636;
+    color: #ffdff4;
   }
   50% {
     color: #615fa3;
   }
   100% {
-    color: #363636;
+    color: #ffdff4;
   }
 }
 
 @keyframes changeColor {
   0% {
-    color: #363636;
+    color: #ffdff4;
   }
   50% {
     color: #615fa3;
   }
   100% {
-    color: #363636;
+    color: #ffdff4;
   }
 }
 
@@ -128,7 +128,7 @@ body {
 
 .title {
   padding: 10px;
-  color: #140f0c;
+  color: #ffdff4;
 }
 
 .game-on,

@@ -3,6 +3,7 @@ $firstBlue: #292d4f;
 $secondBlue: #615fa3;
 $text: #ffdff4;
 $grey: #363636;
+$purple: #2c1026;
 html {
   background: linear-gradient(-45deg, $grey, $firstBlue, $secondBlue, $text);
   background-size: 400% 400%;
@@ -11,7 +12,7 @@ html {
 body {
   position: relative;
   font-family: "Lato", sans-serif;
-  background: linear-gradient(-45deg, $grey, $firstBlue, $secondBlue);
+  background: linear-gradient(-45deg, $purple, $firstBlue);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   margin: 20px;
@@ -49,13 +50,13 @@ body {
 }
 @keyframes changeColor {
   0% {
-    color: $grey;
+    color: $text;
   }
   50% {
     color: $secondBlue;
   }
   100% {
-    color: $grey;
+    color: $text;
   }
 }
 .bigger {
@@ -82,7 +83,7 @@ body {
 }
 .title {
   padding: 10px;
-  color: $black;
+  color: $text;
 }
 .game-on,
 .rollDice,
