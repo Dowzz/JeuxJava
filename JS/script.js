@@ -34,6 +34,7 @@ function newGame(){
         $(document.getElementById('animation')).fadeIn(500)
         $(document.getElementsByClassName('deScore')).fadeIn(500);
         $(document.getElementById('name-one')).addClass('selection');
+        $(document.getElementById('name-two')).removeClass('selection');
         $(document.getElementsByClassName('rollDice')).addClass('wiggle');
         
         players.forEach(player => {
