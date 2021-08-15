@@ -51,7 +51,7 @@ function newGame(){
         play.turn()
         $(document.getElementById('message')).fadeIn(1000);
         $(document.getElementsByClassName('button')).fadeIn(500);
-        $(document.getElementById('message')).html("Faites rouler le dé !");
+        $(document.getElementById('message')).html("Lancez le dé !");
         newgame = true;    
     }else{
         $('#window').addClass('is-active');
