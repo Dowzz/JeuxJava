@@ -125,7 +125,7 @@ function rollDice(){
                     play.turn();
                 }
             $(document.getElementById('message')).html("<div style=\"color:white\">"+ "1, Pas de bol...");
-            $(document.getElementById('message')).toggleClass('bigger');
+            $(document.getElementById('message')).toggleClass('looser');
         }
         else{
             play.currentScore = play.currentScore+number;

@@ -92,6 +92,33 @@ body {
   }
 }
 
+@-webkit-keyframes bigger2 {
+  0% {
+    font-size: 0rem;
+  }
+  100% {
+    font-size: 2rem;
+  }
+}
+
+@keyframes bigger2 {
+  0% {
+    font-size: 0rem;
+  }
+  100% {
+    font-size: 2rem;
+  }
+}
+
+.looser {
+  -webkit-animation-name: bigger2;
+          animation-name: bigger2;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
 .n-jeu {
   display: block;
   background: #615fa3;
@@ -474,22 +501,6 @@ body {
             animation-duration: 1s;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-  }
-  @-webkit-keyframes bigger2 {
-    0% {
-      font-size: 0rem;
-    }
-    100% {
-      font-size: 2rem;
-    }
-  }
-  @keyframes bigger2 {
-    0% {
-      font-size: 0rem;
-    }
-    100% {
-      font-size: 2rem;
-    }
   }
   .rollDice,
   .hold {
