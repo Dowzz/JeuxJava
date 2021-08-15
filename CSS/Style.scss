@@ -360,7 +360,12 @@ body {
   }
   @keyframes bigger2 {
     0% {
+      font-size: 2rem;
+      color: $text;
+    }
+    50% {
       font-size: 1rem;
+      color: $secondBlue;
     }
     100% {
       font-size: 2rem;

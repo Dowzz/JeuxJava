@@ -476,7 +476,12 @@ body {
   }
   @-webkit-keyframes bigger2 {
     0% {
+      font-size: 2rem;
+      color: #ffdff4;
+    }
+    50% {
       font-size: 1rem;
+      color: #615fa3;
     }
     100% {
       font-size: 2rem;
@@ -484,7 +489,12 @@ body {
   }
   @keyframes bigger2 {
     0% {
+      font-size: 2rem;
+      color: #ffdff4;
+    }
+    50% {
       font-size: 1rem;
+      color: #615fa3;
     }
     100% {
       font-size: 2rem;
