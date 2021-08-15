@@ -3,7 +3,8 @@ $firstBlue: #292d4f;
 $secondBlue: #615fa3;
 $text: #ffdff4;
 $grey: #363636;
-$purple: #2c1026;
+$purple: #2c1410;
+$red: #e73e21;
 html {
   background: linear-gradient(-45deg, $grey, $firstBlue, $secondBlue, $text);
   background-size: 400% 400%;
@@ -12,7 +13,7 @@ html {
 body {
   position: relative;
   font-family: "Lato", sans-serif;
-  background: linear-gradient(-45deg, $purple, $firstBlue);
+  background: linear-gradient(-45deg, $purple, $secondBlue);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   margin: 20px;
@@ -20,17 +21,6 @@ body {
   padding: 20px;
   box-shadow: 10px 5px 5px black;
   border: 5px inset $firstBlue;
-}
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .heading {
@@ -179,10 +169,21 @@ body {
   border: 5px inset $firstBlue;
   justify-content: center;
   border-radius: 20px;
-  background-color: $secondBlue;
+  background: $secondBlue;
 }
-#win {
+#window {
   height: auto;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .dice {
   position: relative;

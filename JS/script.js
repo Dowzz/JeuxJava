@@ -97,7 +97,7 @@ function rollDice(){
         $(document.getElementById(play.affichScore)).removeClass('bigger');
         $(document.getElementById(play.currentScore)).removeClass('bigger');
         $(document.getElementsByClassName('rollDice')).removeClass('wiggle');
-        number=Math.floor( Math.random() * 6 )+1;
+        number=Math.floor( Math.random() * 6)+1;
         for (i = 1; i <= 6; i++) {
             $(document.getElementById('dice1')).removeClass('show-' + i);
             if (number === i) {
