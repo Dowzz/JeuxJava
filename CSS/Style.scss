@@ -113,6 +113,7 @@ body {
     )
     bottom right/350% 100% no-repeat;
   transition: 0.5s linear;
+  color: $text;
 }
 .wiggle {
   animation: wiggle 2s linear infinite;
